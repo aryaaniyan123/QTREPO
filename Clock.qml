@@ -4,7 +4,6 @@ Item {
     id: id_root
 
     property color color: "#F4FF81"
-
     property int hours: currentDate.getHours()
     property int minutes: currentDate.getMinutes()
     property int seconds: currentDate.getSeconds()
@@ -15,14 +14,12 @@ Item {
         repeat: true
         interval: 1000
         running: true
-
         onTriggered: id_root.currentDate = new Date()
     }
 
     Rectangle {
         id: id_plate
-
-        anchors.centerIn: parent
+        anchors.fill: parent
         height: Math.min(id_root.width, id_root.height)
         width: height
         radius: width/2
@@ -70,7 +67,6 @@ Item {
 
     Rectangle {
         id: id_center
-
         anchors.centerIn: parent
         height: id_plate.height*0.05
         width: height
